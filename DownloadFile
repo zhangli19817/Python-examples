@@ -1,0 +1,8 @@
+import requests
+
+res=requests.get("https://dldir1.qq.com/qqtv/mac/channel_txcm/QQLive_channel_TencentComputerManager_1.9.2.38569.dmg")
+newfile=open("/Users/luffy/Downloads/new1.dmg",'wb')
+for chunk in res.iter_content(1024000):
+    newfile.write(chunk)
+
+newfile.close()
